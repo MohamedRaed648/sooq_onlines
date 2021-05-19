@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>Sign_up</title>
+    </head>
+    <body>
+        <form method="POST">
+            {%csrf_token%}
+            {%include 'includes/form.html'%}
+
+            <button type="submit">Sign_up</button>
+            
+        </form>
+    </body>
+</html>

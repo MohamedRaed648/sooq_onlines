@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Chat</title>
+    </head>
+
+    <body>
+        <p>Welcome to chat section</p>
+        <form method="POST">
+            {%csrf_token%}
+            {%include 'includes/form.html'%}
+            <button type="submit">send</button>
+
+        </form>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>POSTS</title>
+    </head>
+    <body>
+        <div> 
+            <a href="{%url 'Add_Posts' post_show_all.pk%}">Add Post</a>
+        </div>
+    {%for i in queryset%}
+    <p>{{i.type_of_prodect}}</p>
+    <p>{{i.discripe_prod1ect}}</p>
+    <p>{{i.prodect_cost}}</p>
+    <p>{{i.id}}</p>
+    <p>{{i.post_create}}</p>
+    <div>
+        <a href="{%url 'Chat' i.id i.type_of_prodect   %}"> Chat </a>
+    </div>
+    {%endfor%}
+
+    </body>
+</html>

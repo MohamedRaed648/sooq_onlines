@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <head>
+        <title>Sooq.com </title>
+        {%if user.is_authenticated%}
+
+        <p style="font-size: larger;font-family: 'Segoe Script'">{{user}}</p>
+        {%endif%}
+        <div>            
+            {%if user.is_authenticated%}
+            <button class="button">
+                <a href="{%url 'logout'%}">Logout</a>
+            </button>    
+            
+            {%else%}
+            <a href="{%url 'sign_up'%}">Sign_up</a>
+
+            <br>
+            <a href="{%url 'login'%}">Login</a>     
+            <br>
+            
+            {%endif%}
+        </div>
+
+        <style>
+            table,th,td{
+                border: 2px solid black;
+                border-width: 5px;
+                padding: 10px;
+                font-size: large;
+                background-color:rgb(253, 225, 185);
+            }
+            body{
+                background-color: burlywood;
+            }
+            .button{
+                padding: 10px;
+                background-color: coral;
+                cursor:pointer;
+                
+                display: inline-block;
+                font-size: larger;
+                font-family: Segoe Script;
+                text-align: center;
+                text-decoration: none;
+                margin: 4px 2px;
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+    <center>
+
+        <div>
+            <table style="size:100px;">
+            <tr >
+                <th>Name</th>
+                <th>discripe</th>
+            </tr>
+            {%for prd in prodects%}
+
+                <tr>
+                    <td><a href="{%url 'Posts' prd.pk%}">{{prd.name}}</a></td>
+                    <td>{{prd.discription}}</td>
+                </tr>
+
+            {%endfor%}
+        </table>
+        </div>
+    </center>
+
+    </body>
+</html>
