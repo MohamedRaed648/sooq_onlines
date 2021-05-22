@@ -12,9 +12,14 @@
     <p>{{i.prodect_cost}}</p>
     <p>{{i.id}}</p>
     <p>{{i.post_create}}</p>
+    {%if user == i.post_create%}
     <div>
-        <a href="{%url 'Chat' i.id i.type_of_prodect   %}"> Chat </a>
     </div>
+    {%else%}
+    <a href="{%url 'Chat' i.id i.type_of_prodect   %}"> Chat </a>
+
+    {%endif%}
+    
     {%endfor%}
 
     </body>

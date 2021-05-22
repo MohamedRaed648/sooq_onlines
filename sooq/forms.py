@@ -5,9 +5,3 @@ class Post_form(forms.ModelForm):
         model=Posts
         fields=['type_of_prodect','discripe_prod1ect','prodect_cost']
 
-
-
-class Chat_form(forms.ModelForm):
-    class Meta:
-        model=Chat
-        fields=["message"]
