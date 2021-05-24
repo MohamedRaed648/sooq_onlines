@@ -10,7 +10,7 @@ class Posts(models.Model):
     type_of_prodect=models.CharField(max_length=40)
     prodect_cost=models.IntegerField(default=0)
     prd_post_rel=models.ForeignKey(Prodects,related_name="User",on_delete=models.CASCADE)
-    discripe_prod1ect=models.CharField(max_length=400)
+    discripe_prodect=models.CharField(max_length=400)
     post_date=models.DateTimeField(auto_now_add=True)
     post_create=models.ForeignKey(User,related_name="User",on_delete=models.CASCADE)
 

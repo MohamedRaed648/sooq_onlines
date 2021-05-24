@@ -1,8 +1,8 @@
+{%extends 'base.html'%}
+
 {%load static%}
 <html>
-<head>
-  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
-
+{%block style%}
 <style>
     div.fixed {
       position: fixed;
@@ -34,41 +34,38 @@
     }
     
          </style>
-    <div class='container'>
-      <ol  class ="breadcrumb my-4" >
+  {%endblock%}
+  
+  {%block breadcrumb%}
         <li class="breadcrumb-item "><a href="{% url 'home' %}">home</a></li>
         <li class="breadcrumb-item active">{{Post.post_create}}</li>
-      </ol>
+      {%endblock%}
 
 
-</head>
 
-    
-<body>
+    {%block contant%}
   <div>
     {%for texts in chat%}
+
     {%if texts.Chat_Posts_rel.id  == id%}
     <p>{{texts.message}}</p>
     {%endif%}
-
 
     {%endfor%}
   </div>
     <form method="post" name="from" novalidate>
         {% csrf_token %}
     
-       <div class="form-group"  >
+    <div class="form-group"  >
     
              <div class="fixed">
                  <input  type="text" class="form-control" style="font-family:Segoe Script;" name="talk" placeholder="send a message" >
              </div>
               <div class="fixeds">
-               <button type="submit" class="btn btn-success">send</button>
-                </div>
+                 <button type="submit" class="btn btn-success">send</button>
+              </div>
     
-     </div>
+    </div>
     </form>
-</body>    
-<script src='{%static 'js\jquery-3.4.1.min.js'%}'> </script>
-<script src='{%static 'js\bootstrap.min.js'%}'> </script>
-</html>
+    {%endblock%}
+

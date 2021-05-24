@@ -35,7 +35,6 @@ def Add_Post(request,id):
 def Chats(request,id,prodect_name):
     Post=get_object_or_404(Posts,pk=id,type_of_prodect=prodect_name)
     chat=Chat.objects.all()
-    print(Chat.objects.all())
     us=User.objects.all()
 
     if request.method == "POST":

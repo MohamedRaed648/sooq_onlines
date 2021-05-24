@@ -1,8 +1,17 @@
-<html>
-    <head>
-        <title>POSTS</title>
-    </head>
-    <body>
+{%extends 'base.html'%}
+        {%block title%}POSTS{%endblock%}
+
+
+
+        {%block breadcrumb%}
+        <li class='breadcrumb-item '><a href="{%url 'home'%}">Home</a></li>
+        <li class='breadcrumb-item  '>Posts</li>
+        <li class='breadcrumb-item active '>{{post_show_all.name}}</li>
+
+
+        {%endblock%}
+{%block contant%}
+
         <div> 
             <a href="{%url 'Add_Posts' post_show_all.pk%}">Add Post</a>
         </div>
@@ -22,5 +31,4 @@
     
     {%endfor%}
 
-    </body>
-</html>
+{%endblock%}

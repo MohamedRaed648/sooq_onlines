@@ -1,28 +1,8 @@
-<!DOCTYPE html>
-<html>
-    <meta charset="UTF-8">
-    <head>
-        <title>Sooq.com </title>
-        {%if user.is_authenticated%}
+{%extends 'base.html'%}
 
-        <p style="font-size: larger;font-family: 'Segoe Script'">{{user}}</p>
-        {%endif%}
-        <div>            
-            {%if user.is_authenticated%}
-            <button class="button">
-                <a href="{%url 'logout'%}">Logout</a>
-            </button>    
-            
-            {%else%}
-            <a href="{%url 'sign_up'%}">Sign_up</a>
+{%block title%}Sooq.com {%endblock%}
 
-            <br>
-            <a href="{%url 'login'%}">Logins</a>     
-            <br>
-            
-            {%endif%}
-        </div>
-
+{%block style%}
         <style>
             table,th,td{
                 border: 2px solid black;
@@ -47,13 +27,14 @@
                 margin: 4px 2px;
             }
         </style>
+{%endblock%}
 
-    </head>
+{%block breadcrumb%}
+<li class='breadcrumb-item active'>home</li>
+{%endblock%}
 
-    <body>
-
+{%block contant%}
     <center>
-
         <div>
             <table style="size:50px;">
             <tr >
@@ -71,6 +52,4 @@
         </table>
         </div>
     </center>
-
-    </body>
-</html>
+{%endblock%}
