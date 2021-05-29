@@ -5,7 +5,9 @@ urlpatterns = [
     path("",views.Prodect,name="home"),
     path("Posts/<int:id>",views.Post,name="Posts"),
     path("Add_Posts/<int:id>",views.Add_Post,name="Add_Posts"),
-    path("Posts/<int:id>/<str:prodect_name>/Chat",views.Chats,name="Chat")
+    path("Posts/<int:id>/<str:prodect_name>/Chat",views.Chats,name="Chat"),
+    path("account/<int:id>/profile",views.My_account,name="profile")
+
 
 
 

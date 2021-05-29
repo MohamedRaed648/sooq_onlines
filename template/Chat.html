@@ -45,11 +45,24 @@
 
     {%block contant%}
   <div>
-    {%for texts in chat%}
 
-    {%if texts.Chat_Posts_rel.id  == id%}
+
+    {%for texts in chat%}
+    <p>{{texts.chat_posts.all}}</p>
+
+    {%if texts.who_send == user.id%}
+    
     <p>{{texts.message}}</p>
+    
     {%endif%}
+
+    {%if Post.post_create.id == user.id%}
+    <p>{{texts.message}}</p>
+
+
+    {%endif%}
+
+
 
     {%endfor%}
   </div>

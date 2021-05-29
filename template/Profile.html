@@ -1,0 +1,37 @@
+{%extends 'base.html'%}
+{%block title%}My account{%endblock%}
+<style>
+    .left{
+        color:black;
+    }
+</style>
+{%block breadcrumb%}
+<li class='breadcrumb-item '><a href="{%url 'home'%}">Home</a></li>
+<li class='breadcrumb-item  '>account</li>
+<li class='breadcrumb-item  active'>{{user}}</li>
+
+{%endblock%}
+
+{%block contant%}
+<div class='left'>
+    <ol  class ="breadcrumb my-4" >
+        <li class='breadcrumb-item  '>account</li>
+    </ol>
+    <p>{{user_de.username}}</p>
+    <p>{{user_de.first_name}}</p>
+    <p>{{user_de.last_name}}</p>
+    <p>{{user_de.email}}</p>
+    <div>Post you have added</div>
+    {%for i in post%}
+    
+        <div>{{i.type_of_prodect}}</div>
+
+ 
+    {%endfor%}
+
+
+
+    
+    <p></p>
+
+{%endblock%}

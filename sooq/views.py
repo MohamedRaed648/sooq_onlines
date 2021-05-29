@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from .models import *
 from .forms import Post_form
+from django.contrib.auth.models import User
 # Create your views here.
 
 def Prodect(request):
@@ -34,7 +35,8 @@ def Add_Post(request,id):
     
 def Chats(request,id,prodect_name):
     Post=get_object_or_404(Posts,pk=id,type_of_prodect=prodect_name)
-    chat=Chat.objects.all()
+    chat=Chat.objects.filter(Chat_Posts_rel=id)
+    print(chat)
     us=User.objects.all()
 
     if request.method == "POST":
@@ -50,3 +52,8 @@ def Chats(request,id,prodect_name):
     
 
 
+def My_account(request,id):
+    user_de=get_object_or_404(User,pk=id)
+    print(user_de.first_name)
+    post=Posts.objects.filter(post_create=request.user.id)
+    return render(request,"Profile.html",{"user_de":user_de,'post':post})
