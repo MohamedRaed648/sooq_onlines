@@ -57,3 +57,10 @@ def My_account(request,id):
     print(user_de.first_name)
     post=Posts.objects.filter(post_create=request.user.id)
     return render(request,"Profile.html",{"user_de":user_de,'post':post})
+
+
+
+def show_info_product(request,id,id2):
+    proudcts=get_object_or_404(Prodects,pk=id)
+    pro_info=get_object_or_404(Posts,pk=id2)
+    return render(request,"post_info.html",{"proudcts":proudcts,"pro_info":pro_info})

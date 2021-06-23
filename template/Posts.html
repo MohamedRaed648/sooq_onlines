@@ -2,25 +2,33 @@
         {%block title%}POSTS{%endblock%}
 
 
+        {%block style%}
+        <style>
 
+            .div {
+                background-color: rgb(250, 198, 198);
+                width: 1000px;
+                border: 10px solid rgb(0, 0, 0);
+                padding: 50px;
+                margin: 20px;
+}
+        </style>
+
+        {%endblock%}
         {%block breadcrumb%}
         <li class='breadcrumb-item '><a href="{%url 'home'%}">Home</a></li>
         <li class='breadcrumb-item  '>Posts</li>
         <li class='breadcrumb-item active '>{{post_show_all.name}}</li>
-
-
         {%endblock%}
 {%block contant%}
 
-        <div> 
+        <div > 
             <a href="{%url 'Add_Posts' post_show_all.pk%}">Add Post</a>
         </div>
     {%for i in queryset%}
-    <p>{{i.type_of_prodect}}</p>
-    <p>{{i.discripe_prod1ect}}</p>
-    <p>{{i.prodect_cost}}</p>
-    <p>{{i.id}}</p>
-    <p>{{i.post_create}}</p>
+  <div class="div">
+      sd
+  </div>
     {%if user == i.post_create%}
     <div>
         <a href="{%url 'Chat' i.id i.type_of_prodect   %}"> My_Chat </a>

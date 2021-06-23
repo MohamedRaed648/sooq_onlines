@@ -1,18 +1,9 @@
 {%extends 'base.html'%}
-
+{%load static%}
 {%block title%}Sooq.com {%endblock%}
 
 {%block style%}
-        <style>
-            table,th,td{
-                border: 2px solid black;
-                border-width: 5px;
-                padding: 10px;
-                font-size: large;
-            }
-       
-
-        </style>
+<link rel="stylesheet" href="{% static 'css/style.css'%}">
 {%endblock%}
 
 {%block breadcrumb%}
@@ -20,22 +11,13 @@
 {%endblock%}
 
 {%block contant%}
-    <center>
-        <div>
-            <table style="size:50px;">
-            <tr >
-                <th>Name</th>
-                <th>discripe</th>
-            </tr>
             {%for prd in prodects%}
+            <div class="res-sphere ">
 
-                <tr>
-                    <td><a href="{%url 'Posts' prd.pk%}">{{prd.name}}</a></td>
-                    <td>{{prd.discription}}</td>
-                </tr>
-
+            </div>
+            <div class="res-circle">
+                <div class="circle-txt"><a href="{%url 'Posts' prd.pk%}">{{prd.name}}</a>
+                </div>
+              </div>
             {%endfor%}
-        </table>
-        </div>
-    </center>
 {%endblock%}
