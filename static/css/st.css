@@ -1,0 +1,38 @@
+
+*{
+    -webkit-box-sizing:border-box ;
+    box-sizing: border-box;
+}
+
+
+.n-1{
+    width: 100%;
+    background-color: #282a35;
+    color: white;
+    font-family: 'Cairo', sans-serif;
+    height: 49px;
+    border-radius: 13px;
+    box-shadow: 0 4px 8px 0px #000000;
+    position: sticky;
+    top: 0;
+}
+.u-1{
+    padding: 10px;
+    margin: 0;
+    list-style: none;
+}
+.u-1 li {
+    display: inline-block;
+    padding-right: 17px;
+}
+
+.li-2{
+    position: absolute;
+    right: 1px;
+}
+.btn-1{
+    background-color: #827878;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}

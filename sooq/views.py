@@ -1,18 +1,21 @@
+from django.db.models.query_utils import Q
 from django.shortcuts import render,get_object_or_404,redirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from .models import *
 from .forms import Post_form
 from django.contrib.auth.models import User
-# Create your views here.
+from django.db.models import Count
+
 
 def Prodect(request):
     prodect_show_all=Prodects.objects.all()
+ 
     return render(request,'home.html',{"prodects":prodect_show_all})
 
 def Post(request,id):
     post_show_all=get_object_or_404(Prodects,pk=id)
-    queryset=post_show_all.User.all()
+    queryset=post_show_all.Post.all()
     return render(request,"Posts.html",{"post_show_all":post_show_all,"queryset":queryset})
 
      

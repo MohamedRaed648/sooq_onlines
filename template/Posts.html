@@ -27,7 +27,10 @@
         </div>
     {%for i in queryset%}
   <div class="div">
-      sd
+      {{i.type_of_prodect}}
+      {{i.discripe_prodect}}
+      {{i.post_date}}
+      {{i.post_create.username}}
   </div>
     {%if user == i.post_create%}
     <div>

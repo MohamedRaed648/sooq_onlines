@@ -1,23 +1,30 @@
 {%extends 'base.html'%}
 {%load static%}
 {%block title%}Sooq.com {%endblock%}
-
 {%block style%}
-<link rel="stylesheet" href="{% static 'css/style.css'%}">
-{%endblock%}
+<link rel="stylesheet" href="{%static 'css/st.css' %}"/>
 
-{%block breadcrumb%}
-<li class='breadcrumb-item active'>home</li>
 {%endblock%}
 
 {%block contant%}
-            {%for prd in prodects%}
-            <div class="res-sphere ">
+    <nav class="n-1">
+        <ul on class="u-1">
+            <li class='li-1' title="Home">Home</li>
 
-            </div>
-            <div class="res-circle">
-                <div class="circle-txt"><a href="{%url 'Posts' prd.pk%}">{{prd.name}}</a>
-                </div>
-              </div>
-            {%endfor%}
+            {% for prd in prodects %}
+            <li>
+                {{prd.name}}     
+            </li>
+            {%endfor%} 
+            <li title="Contact with us ">Tell us</li>
+            <li class="li-2">
+            <button type="submit" class="btn-1">
+                <img style='padding: 2px;' src="{% static 'img/loupe-svg.svg'%}"/>
+            </button>
+            </li>
+
+        </ul>
+        
+        
+    </nav>
 {%endblock%}
