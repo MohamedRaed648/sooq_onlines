@@ -10,6 +10,8 @@ from django.db.models import Count
 
 def Prodect(request):
     prodect_show_all=Prodects.objects.all()
+
+
  
     return render(request,'home.html',{"prodects":prodect_show_all})
 

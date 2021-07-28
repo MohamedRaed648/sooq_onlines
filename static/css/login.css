@@ -1,0 +1,64 @@
+.parent{
+    background-color: #ddd;
+    width: 520px;
+    padding-top: 90px;
+    position: relative;
+    margin: auto;
+    /* box-sizing: border-box; */
+    height: 368px;
+    top: 90px;
+    
+}
+
+.input{
+
+    border: none;
+    padding: 11px;
+    width: 400px;
+    /* position: absolute; */
+    top: 140px;
+    margin-top: 40px;
+    outline: none;
+    border-radius: 7px;
+    margin-left: 46px;
+
+}
+
+.header span{
+    position: absolute;
+    top: 0;
+    font-size: 32px;
+    color: #a55252;
+    font-family: 'Cairo', sans-serif;
+    background-color: #eee;
+    width: 100%;
+    text-align: center;
+    box-shadow: 1px 11px 22px -15px #888;
+}
+
+label{
+    color: black;
+    font-size: 14px;
+    font-family: 'Cairo', sans-serif;
+    position: absolute;
+    left: 44px;
+    font-weight: bold;
+    /* bottom: -16px; */
+    padding-top: 9px;
+}
+
+.btn{
+    width: 80%;
+    border: none;
+    position: relative;
+    left: 40px;
+    margin-top: 35px;
+    padding: 13px;
+    font-size: 25px;
+    border-radius: 34px;
+    background-color: #a55252;
+    cursor: pointer;
+}
+.btn:active{
+    border: 1px solid #b16666;
+}

@@ -11,8 +11,4 @@ class Sign_up_form(UserCreationForm):
         model=User
         fields={"username","email","first_name","last_name"}
 
-class Login_form(UserCreationForm):
-    class Meta:
-        model=User
-        fields={"username","password1"}
 

@@ -1,18 +1,35 @@
 {%extends 'base.html'%}
+{%load widget_tweaks%}
+{%load static%}
 
         {%block title%}Login{%endblock%}
-
-        {%block breadcrumb%}
-        <li class='breadcrumb-item '><a href="{%url 'home'%}">Home</a></li>
-        <li class='breadcrumb-item active'>Login</li>   
+        {%block style%}
+                <link rel="stylesheet" href="{% static 'css/login.css'%}"/>
         {%endblock%}
   
 {%block contant%}
+        <div class="parent">
+                <div class="header">
+                        <span>Login Form</span>
+                </div>
+                <form name="form" method="POST" >
+                        {%csrf_token%}
+                        {% for hidden in form.hidden_fields %}
+                        {{ hidden }}
+                        {% endfor %}    
+                        <label>{{form.visible_fields.label_tag}}</label>
+                        {% for field in form.visible_fields %}  
+                        {{ field|add_class:'input' }}
+               
+                        {% for error in field.errors %}
+                        <span >{{ error }}</span>
+                        {% endfor %}
+                  
+                        {%endfor%}
+                        <button type="submit" class="btn">Login</button>
 
-        <form method="POST">
-            {%csrf_token%}
-            {%include 'includes/form.html'%}
-            <button type="submit" class="btn btn-primary">Login</button>
-        </form>
+                </form>     
+      
+
 
 {%endblock%}

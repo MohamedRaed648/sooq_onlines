@@ -14,8 +14,8 @@ def sgin_up(request):
               user=form.save()
               login(request,user)
               return redirect('home')
-       else:
-            form.save()
+       
+            
     except ValueError:
         print("no")
     return render(request,"sgin_up.html",{"form":form})
