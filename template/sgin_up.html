@@ -1,15 +1,38 @@
 {%extends 'base.html'%}
+{%load widget_tweaks%}
+
+{%load static%}
         {%block title%}Sign_up{%endblock%}
+
+        {%block style%}
+                <link rel="stylesheet"  href="{% static 'css/signup.css'%}">
+        {%endblock%}
 
 
 
 
 
 {%block contant%}
-        <form method="POST">
+        <div class="parent">
+         <form method="POST">
+                <div class="header">
+                        <span>Sign up Form</span>
+                </div>
+
             {%csrf_token%}
-            {%include 'includes/form.html'%}
+            {% for field in form.visible_fields %}
+            <div class="lables">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            </div>
+            <span>
+                {{field}}
+
+            </span>
+     
+            {%endfor%}
             <button type="submit" class="btn btn-primary ml-2">Sign_up</button>
-        </form>
+         </form>
+        </div>
+
 {%endblock%}
     

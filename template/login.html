@@ -5,6 +5,7 @@
         {%block title%}Login{%endblock%}
         {%block style%}
                 <link rel="stylesheet" href="{% static 'css/login.css'%}"/>
+
         {%endblock%}
   
 {%block contant%}
@@ -12,24 +13,29 @@
                 <div class="header">
                         <span>Login Form</span>
                 </div>
-                <form name="form" method="POST" >
+                <form name="form" method="POST" novalidate >
                         {%csrf_token%}
-                        {% for hidden in form.hidden_fields %}
-                        {{ hidden }}
-                        {% endfor %}    
-                        <label>{{form.visible_fields.label_tag}}</label>
-                        {% for field in form.visible_fields %}  
-                        {{ field|add_class:'input' }}
-               
-                        {% for error in field.errors %}
-                        <span >{{ error }}</span>
+                           
+                         <div>
+                            <label for="id_username">Username</label>
+                        </div>
+                        <input type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" class="input" required="True" id="id_username">
+                        
+                        <div>
+                            <label for="id_username">Password</label>
+                        </div>
+                        <input type="password" name="password" autocomplete="current-password" class="input" required="True" id="id_password">
+                             
+                        {% for field in form.visible_fields %}
+                           
+                                {% for error in field.errors %}
+                                        <script src="{%static 'js/login.js'%}"></script>
+                                {% endfor %}
                         {% endfor %}
-                  
-                        {%endfor%}
+
                         <button type="submit" class="btn">Login</button>
 
                 </form>     
       
-
 
 {%endblock%}

@@ -5,8 +5,8 @@
     position: relative;
     margin: auto;
     /* box-sizing: border-box; */
-    height: 368px;
-    top: 90px;
+    height: 100%;
+    top: 15px;
     
 }
 
@@ -62,7 +62,3 @@ label{
     border: 1px solid #b16666;
 }
 
-
-.red{
-    background-color: red;
-  }
