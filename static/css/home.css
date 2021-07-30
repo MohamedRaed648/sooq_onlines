@@ -25,7 +25,15 @@
     display: inline-block;
     padding-right: 17px;
 }
+.li-1 a{
+    color: inherit;
+    cursor: pointer;
 
+}
+.li a:hover{
+    color: inherit;
+
+}
 .li-2{
     position: absolute;
     right: 1px;
@@ -35,4 +43,11 @@
     border: none;
     border-radius: 20px;
     cursor: pointer;
+}
+.a-1 a{
+    color:inherit;
+    cursor: pointer;
+}
+.a-1 a:hover{
+    color: inherit;
 }

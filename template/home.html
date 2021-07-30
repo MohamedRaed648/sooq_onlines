@@ -9,11 +9,13 @@
 {%block contant%}
     <nav class="n-1">
         <ul on class="u-1">
-            <li class='li-1' title="Home">Home</li>
+            <li class='li-1' title="Home"><a href="{% url 'home'%}">Home</a></li>
 
             {% for prd in prodects %}
-            <li>
-                {{prd.name}}     
+            <li class="a-1">
+                <a href="{% url 'Posts' prd.id%}">
+                    {{prd.name}}  
+                </a>   
             </li>
             {%endfor%} 
             <li title="Contact with us ">Tell us</li>

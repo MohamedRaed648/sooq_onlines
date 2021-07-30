@@ -1,18 +1,25 @@
+
 {%extends 'base.html'%}
+{%load static%}
+{%load widget_tweaks%}
 
 {%block title%}Posts{%endblock%}
+{%block style%}
+    <link rel="stylesheet" href="{% static 'css/Add_Posts.css'%}">
 
-{%block breadcrumb%}
-<li class='breadcrumb-item '><a href="{%url 'home'%}">Home</a></li>
-<li class='breadcrumb-item active '>Add Posts</li>   
 {%endblock%}
 {%block contant%}
 
-        <form method="POST">
-            {%csrf_token%}
-            {%include 'includes/form.html'%}
+<div class="container">
+    <div class="sp-1">Welcome to Sooq online </div>
 
-            <button type="submit" class="btn btn-success">Post</button>
+    <form method="POST" class="form-1"> 
+        {%csrf_token%}
+        {{form}}
+    </form>
 
-        </form>
+
+</div>
+
+
 {%endblock%}

@@ -11,6 +11,7 @@ class Posts(models.Model):
     prodect_cost=models.IntegerField(default=0)
     prd_post_rel=models.ForeignKey(Prodects,related_name="Post",on_delete=models.CASCADE)
     discripe_prodect=models.CharField(max_length=400)
+    mobile_number=models.IntegerField(default=0)
     post_date=models.DateTimeField(auto_now_add=True)
     post_create=models.ForeignKey(User,related_name="Post",on_delete=models.CASCADE)
 
